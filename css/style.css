@@ -1,28 +1,56 @@
 .container{
     margin: 0 auto;
     width: 1200px;
-    background-color: #dedede;
+    /* background-color: #eee; */
+}
+.title-page{
+    text-align: center;
+    font-weight: bold;
 }
 #app{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-content: flex-end;
+    padding: 100px 0;
+    margin: 20px;
 }
 .box-item{
     position: relative;
-    max-width: auto;
+    width: 250px;
     padding: 20px;
     margin: 30px;
-    background-color: #fff;
+    background-color: #eee;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
     overflow: hidden;
+    border-radius: 15px;
 }
 .app-title{
+    text-align: center;
+}
+.box-sort{
     text-align: center;
 }
 .btn-delete{
     position: absolute;
     top: 0;
     right: 0;
+    background: red;
+    color: #fff;
+    border: none;
+}
+.btn-delete:hover{
+    opacity: 0.9;
+}
+.btn{
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    background: #31ce03;
+    line-height: 1;
+    padding: 15px 25px;
+    border-radius: 25px;
+    border: none;
+    width: 120px;
 }

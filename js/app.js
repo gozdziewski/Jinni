@@ -152,19 +152,16 @@ const appData = [
     }
 ]
 
-
-
 function FlexTemplate(package){
     return `
-    <div class="box-item">
+    <div class="box-item" data-price="${package.PackagePrice}" data-jackpot="${package.Items[0].JackpotAmount}">
         <h3>${package.DisplayName}</h3>
-        <p>Price: ${package.Items[0].ItemPrice}</p>
+        <p>Price: ${package.PackagePrice}</p>
         <p> Jackpot: ${package.Items[0].JackpotAmount}</p>
         <button class="btn-delete">x</button>
     </div>
     `
 }
-
 
 const div = document.querySelector("#app");
 document.getElementById("app").innerHTML =`
@@ -176,4 +173,18 @@ deleteButtons.forEach(function(element){
     element.addEventListener("click", function(){
         this.closest('.box-item').remove();
     })
+});
+
+var $wrapper = $('#app');
+
+document.querySelector("#price").addEventListener('click', function(){
+    $wrapper.find(".box-item").sort(function (a, b){
+        return +a.dataset.price - +b.dataset.price;
+    }).appendTo($wrapper);
+});
+
+document.querySelector("#jackpotAmount").addEventListener('click', function(){
+    $wrapper.find(".box-item").sort(function (a, b){
+        return +a.dataset.jackpot - +b.dataset.jackpot;
+    }).appendTo($wrapper);
 });
