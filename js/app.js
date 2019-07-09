@@ -1,4 +1,4 @@
-const appData = [
+ appData = [
     {
         "PackageID":573,
         "ProductType":"Bundle",

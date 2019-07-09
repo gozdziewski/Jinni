@@ -1,7 +1,5 @@
 .container{
     margin: 0 auto;
-    width: 1200px;
-    /* background-color: #eee; */
 }
 .title-page{
     text-align: center;
@@ -11,13 +9,11 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    align-content: flex-end;
-    padding: 100px 0;
+    padding: 30px 0;
     margin: 20px;
 }
 .box-item{
     position: relative;
-    width: 250px;
     padding: 20px;
     margin: 30px;
     background-color: #eee;
@@ -31,6 +27,9 @@
 .box-sort{
     text-align: center;
 }
+button{
+    outline: none;
+}
 .btn-delete{
     position: absolute;
     top: 0;
@@ -40,7 +39,7 @@
     border: none;
 }
 .btn-delete:hover{
-    opacity: 0.9;
+    opacity: 0.8;
 }
 .btn{
     color: #fff;
@@ -53,4 +52,7 @@
     border-radius: 25px;
     border: none;
     width: 120px;
+}
+.btn:hover{
+    opacity: .8;
 }
