@@ -156,10 +156,11 @@ const appData = [
 
 function FlexTemplate(package){
     return `
-    <div class=box-item">
+    <div class="box-item">
         <h3>${package.DisplayName}</h3>
-        <p>Price: ${package.Items.ItemPrice}</p>
-        <p> Jackpot: ${package.Items.JackpotAmount}</p>
+        <p>Price: ${package.Items[0].ItemPrice}</p>
+        <p> Jackpot: ${package.Items[0].JackpotAmount}</p>
+        <button class="btn-delete">x</button>
     </div>
     `
 }
@@ -169,3 +170,10 @@ const div = document.querySelector("#app");
 document.getElementById("app").innerHTML =`
 ${appData.map(FlexTemplate).join('')}
 `;
+
+let deleteButtons = document.querySelectorAll(".btn-delete");
+deleteButtons.forEach(function(element){
+    element.addEventListener("click", function(){
+        this.closest('.box-item').remove();
+    })
+});
