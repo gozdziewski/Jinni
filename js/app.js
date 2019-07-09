@@ -151,3 +151,21 @@ const appData = [
         }]
     }
 ]
+
+
+
+function FlexTemplate(package){
+    return `
+    <div class=box-item">
+        <h3>${package.DisplayName}</h3>
+        <p>Price: ${package.Items.ItemPrice}</p>
+        <p> Jackpot: ${package.Items.JackpotAmount}</p>
+    </div>
+    `
+}
+
+
+const div = document.querySelector("#app");
+document.getElementById("app").innerHTML =`
+${appData.map(FlexTemplate).join('')}
+`;
